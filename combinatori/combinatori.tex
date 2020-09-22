@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{polyglossia, mathtools}
+\setmainlanguage{italian}
+
+\author{Mattia Martelli}
+\date{}
+\title{Combinatori}
+
+\begin{document}
+    
+    \maketitle
+
+    \section*{Forma di Backus-Naur}
+
+        \[
+            \mathrm{T} \Coloneqq \mathrm{V} \; | \; \lambda \mathrm{V} . \, \mathrm{T} \; | \; (\mathrm{T} \, \mathrm{T})
+        \]
+
+    \section*{\(\lambda\) calcolo}
+
+        \begin{align*}
+            \mathrm{I} &\coloneqq \lambda x . \, x\\
+            \mathrm{K} &\coloneqq \lambda x . \, \lambda y . \, x\\
+            \mathrm{S} &\coloneqq \lambda xyz . \, x \, z \, (y \, z)\\
+            \mathrm{B} &\coloneqq \lambda xyz . \, x \, (y \, z)\\
+            \mathrm{C} &\coloneqq \lambda xyz . \, x \, z \, y\\
+            \mathrm{W} &\coloneqq \lambda xy . \, x \, y \, y\\
+            \omega &\coloneqq \lambda x . \, x \, x\\
+            \Omega &\coloneqq (\lambda x . \, x \, x) \, (\lambda x . \, x \, x)\\
+            \mathrm{Y} &\coloneqq \lambda f . \, (\lambda x . \, f \, (x \, x)) \, (\lambda x . \, f \, (x \, x))\\
+            \Theta &\coloneqq (\lambda xy . \, y \, (x \, x \, y)) \, (\lambda xy . \, y \, (x \, x \, y))
+        \end{align*}
+
+    \section*{SKI caclolo}
+
+        \begin{align*}
+            \mathrm{I} &\coloneqq \mathrm{S} \, \mathrm{K} \, \mathrm{K}\\
+            \mathrm{Y} &\coloneqq \mathrm{S} \, (\mathrm{K} \, (\mathrm{S} \, \mathrm{I} \, \mathrm{I})) (\mathrm{S} \, (\mathrm{S} \, (\mathrm{K} \, \mathrm{S}) \, \mathrm{K}) \, (\mathrm{K} \, (\mathrm{S} \, \mathrm{I} \, \mathrm{I})))
+        \end{align*}
+
+\end{document}
